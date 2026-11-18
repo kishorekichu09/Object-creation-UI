@@ -1,0 +1,46 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>7 Cytoscape themed object flow</title>
+      <meta name="description" content="Streamline document analysis and UI creation with this app, designed for developers and designers to enhance productivity and ensure accuracy." />
+      <meta name="robots" content="noindex, nofollow" />
+      <style>
+        html, body { height: 100%; margin: 0; }
+        #root { height: 100%; }
+      </style>
+      <script>
+        try {
+          var t = localStorage.getItem('sab-theme');
+          var isLight = t === 'light';
+          if (isLight) {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.style.backgroundColor = '#E2E8F0';
+            document.documentElement.style.colorScheme = 'light';
+            if (document.body) document.body.style.backgroundColor = '#E2E8F0';
+          } else {
+            document.documentElement.classList.add('dark');
+            document.documentElement.style.backgroundColor = '#000000';
+            document.documentElement.style.colorScheme = 'dark';
+            if (document.body) document.body.style.backgroundColor = '#000000';
+          }
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.style.backgroundColor = '#000000';
+        }
+      </script>
+      
+      <script type="module" crossorigin src="/assets/index-BNzl8_QV.js"></script>
+      <link rel="stylesheet" crossorigin href="/assets/index-BySrI0PL.css">
+    </head>
+
+    <body>
+      
+      <div id="root"></div>
+      
+    </body>
+  </html>
+  

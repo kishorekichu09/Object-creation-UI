@@ -1,0 +1,25 @@
+---
+description: Follow the SAB Revamp Product Definition as the source of truth for all new functionality.
+alwaysApply: true
+---
+
+# SAB Product Definition (mandatory)
+
+Before adding or changing product functionality, read and follow:
+
+`docs/Smart_App_Builder_Revamp_Product_Definition.md`
+
+That file is the complete technical/product document for this project (brief, PRD, personas, journeys, functional spec, IA).
+
+## How to use it
+
+- Treat it as the source of truth for scope, flows, objects/fields/layouts, create/edit/deploy behavior, and UX principles.
+- Do not invent features that conflict with it. If a request conflicts, follow the document and call out the gap.
+- Reuse existing SAB capabilities; do not discard enterprise behavior for a simpler demo.
+- Prefer **application-first**, **progressive disclosure**, **visual feedback** (graph/preview updates in real time), and **contextual configuration**.
+- Keep advanced settings available but secondary (do not dump all 13+ sections into the primary path).
+- Distinguish **existing SAB behavior** from items the document labels as **recommendations**.
+
+## Current prototype focus
+
+This workspace currently prototypes the Objects graph and object create/edit flow. When extending it, align with the document’s object modeling, field types, relationships, live visual feedback, and deploy-to-inspect behavior.

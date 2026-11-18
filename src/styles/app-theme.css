@@ -1,0 +1,405 @@
+/**
+ * Application theme tokens
+ * :root  = full light product UI
+ * .dark  = original dark product UI (preserve on dark mode toggle)
+ */
+
+:root {
+  /* Canvas & graph — airy light surfaces (avoid heavy slate wash) */
+  --app-canvas-bg: #F8FAFC;
+  --app-graph-bg: #F1F5F9;
+  --app-starfield-opacity: 0;
+  --app-starfield-size: 0;
+  --app-graph-label-stroke: rgba(241, 245, 249, 0.96);
+  --app-graph-hint: #64748B;
+
+  /* Surfaces */
+  --app-shell-bg: #FFFFFF;
+  --app-shell-bg-solid: #FFFFFF;
+  --app-shell-bg-elevated: #FFFFFF;
+  --app-shell-bg-overlay: rgba(15, 23, 42, 0.52);
+  --app-shell-bg-muted: #FFFFFF;
+  --app-shell-bg-subtle: #F8FAFC;
+  --app-shell-bg-hover: #F1F5F9;
+  --app-shell-bg-active: rgba(99, 102, 241, 0.1);
+  --app-shell-bg-accent: rgba(99, 102, 241, 0.08);
+  --app-shell-bg-accent-strong: rgba(99, 102, 241, 0.14);
+  --app-shell-bg-success: rgba(5, 150, 105, 0.18);
+  --app-shell-bg-info: rgba(59, 130, 246, 0.1);
+  --app-shell-bg-danger: rgba(239, 68, 68, 0.1);
+  --app-shell-bg-warning: rgba(245, 158, 11, 0.12);
+  --app-shell-bg-footer: #F8FAFC;
+  --app-shell-bg-input: #FFFFFF;
+  --app-shell-bg-input-subtle: #F8FAFC;
+  --app-shell-bg-panel: #FFFFFF;
+  --app-shell-bg-dropdown: #FFFFFF;
+  --app-shell-bg-floating: #FFFFFF;
+  /* Soft enough to show the graph, opaque enough for AI card / validation readability */
+  --app-shell-bg-floating-soft: rgba(255, 255, 255, 0.78);
+  /* Selected chip inside floating-soft controls — solid so it never merges with the track */
+  --app-view-toggle-selected-bg: #FFFFFF;
+  --app-shell-shadow: 0 8px 32px rgba(15, 23, 42, 0.08);
+  --app-shell-shadow-lg: 0 16px 48px rgba(15, 23, 42, 0.12);
+  --app-search-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --app-search-shadow-focus: 0 0 0 3px rgba(79, 70, 229, 0.12), 0 2px 10px rgba(15, 23, 42, 0.08);
+
+  /* Text — WCAG-friendly on light surfaces */
+  --app-text-primary: #0F172A;
+  --app-text-secondary: #334155;
+  --app-text-muted: #64748B;
+  --app-text-subtle: #94A3B8;
+  --app-text-disabled: #CBD5E1;
+  --app-text-body: #475569;
+  --app-text-label: #475569;
+  --app-text-accent: #4338CA;
+  --app-text-accent-muted: #4F46E5;
+  --app-text-success: #047857;
+  --app-text-danger: #B91C1C;
+  --app-text-danger-soft: #DC2626;
+  --app-text-info: #1D4ED8;
+  --app-text-info-soft: #2563EB;
+  --app-text-warning: #B45309;
+  --app-text-on-accent: #FFFFFF;
+  --app-text-inverse: #F8FAFC;
+  --app-launcher-title: #0F172A;
+
+  /* Outline chips (e.g. Newly created) — primary on light panels */
+  --app-chip-outline-border: #0F172A;
+  --app-chip-outline-text: #0F172A;
+
+  /* Neutral info banner (wizard tips) */
+  --app-info-banner-bg: #FFFFFF;
+  --app-info-banner-border: rgba(15, 23, 42, 0.14);
+  --app-info-banner-text: #475569;
+
+  /* Borders — chrome / panels / dividers match input stroke (--app-border-strong) */
+  --app-border: rgba(15, 23, 42, 0.14);
+  --app-border-subtle: rgba(15, 23, 42, 0.14);
+  --app-border-strong: rgba(15, 23, 42, 0.14);
+  --app-border-accent: rgba(79, 70, 229, 0.35);
+  --app-border-accent-strong: rgba(79, 70, 229, 0.5);
+  --app-border-success: rgba(5, 150, 105, 0.55);
+  --app-border-info: rgba(37, 99, 235, 0.3);
+  --app-border-danger: rgba(220, 38, 38, 0.3);
+  --app-border-dashed: rgba(15, 23, 42, 0.12);
+
+  /* Accent */
+  --app-accent: #4F46E5;
+  --app-accent-light: #6366F1;
+  --app-accent-muted: #818CF8;
+  --app-accent-glow: rgba(79, 70, 229, 0.10);
+  --app-accent-shadow: rgba(15, 23, 42, 0.12);
+
+  /* Controls */
+  --app-toggle-off: rgba(15, 23, 42, 0.12);
+  --app-toggle-on: #4F46E5;
+  --app-toggle-knob: #FFFFFF;
+  --app-scrollbar-thumb: rgba(15, 23, 42, 0.12);
+  --app-scrollbar-thumb-strong: rgba(15, 23, 42, 0.18);
+  --app-overlay-blur: rgba(15, 23, 42, 0.35);
+  --app-ctrl-btn-bg: rgba(255, 255, 255, 0.96);
+  --app-ctrl-btn-border: rgba(15, 23, 42, 0.14);
+
+  /* Primary CTA — product accent */
+  --app-btn-primary-bg: #4F46E5;
+  --app-btn-primary-text: #FFFFFF;
+  --app-btn-primary-hover: #4338CA;
+  --app-btn-primary-shadow: rgba(79, 70, 229, 0.28);
+
+  /* Launcher cards — light: white cards, tinted borders */
+  --app-card-ai-bg: #EEF2FF;
+  --app-card-ai-border: rgba(79, 70, 229, 0.28);
+  --app-card-ai-border-hover: rgba(79, 70, 229, 0.45);
+  --app-card-ai-glow: rgba(79, 70, 229, 0.12);
+  --app-card-manual-bg: #ECFDF5;
+  --app-card-manual-border: rgba(5, 150, 105, 0.28);
+  --app-card-manual-border-hover: rgba(5, 150, 105, 0.45);
+  --app-card-manual-glow: rgba(5, 150, 105, 0.12);
+  --app-card-template-bg: #FFFBEB;
+  --app-card-template-border: rgba(217, 119, 6, 0.28);
+  --app-card-template-border-hover: rgba(217, 119, 6, 0.45);
+  --app-card-template-glow: rgba(217, 119, 6, 0.12);
+  --app-asset-data: #0E7490;
+  --app-asset-app: #6D28D9;
+  --app-card-title: #0F172A;
+  --app-card-desc: #475569;
+  --app-card-body: #334155;
+  --app-card-icon-ai-bg: rgba(79, 70, 229, 0.12);
+  --app-card-icon-manual-bg: rgba(5, 150, 105, 0.12);
+  --app-card-icon-template-bg: rgba(217, 119, 6, 0.12);
+  --app-modal-shadow: 0 20px 48px rgba(15, 23, 42, 0.10), 0 4px 12px rgba(15, 23, 42, 0.04);
+  /* Centered status / success popups — soft slate elevation, no purple halo */
+  --app-popup-shadow:
+    0 0 0 1px rgba(15, 23, 42, 0.06),
+    0 18px 48px rgba(15, 23, 42, 0.10),
+    0 6px 16px rgba(15, 23, 42, 0.05);
+
+  /* Wizard & audit surfaces */
+  --app-wizard-sidebar-bg: #FFFFFF;
+  --app-wizard-floating-shadow: 0 16px 40px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  /* AI deploy / plan surfaces — light theme stays airy (avoid heavy indigo wash) */
+  --app-deploy-card-bg: linear-gradient(165deg, #F8FAFC 0%, #FFFFFF 42%, #FFFFFF 100%);
+  --app-deploy-card-header: linear-gradient(180deg, rgba(99, 102, 241, 0.04) 0%, rgba(248, 250, 252, 0.55) 42%, #FFFFFF 100%);
+  --app-ai-surface-tint: #FFFFFF;
+  --app-ai-row-tint: linear-gradient(180deg, rgba(99, 102, 241, 0.03) 0%, #FFFFFF 70%);
+  /* Deploy stat card strokes (Objects / Fields / Relationships / Validation) */
+  --app-stat-object: #6366F1;
+  --app-stat-object-soft: color-mix(in srgb, #6366F1 14%, var(--app-shell-bg-elevated));
+  --app-stat-field: #D69100;
+  --app-stat-field-soft: color-mix(in srgb, #D69100 14%, var(--app-shell-bg-elevated));
+  --app-stat-link: #BE00E4;
+  --app-stat-link-soft: color-mix(in srgb, #BE00E4 14%, var(--app-shell-bg-elevated));
+  --app-stat-validation: #13C288;
+  --app-stat-validation-soft: color-mix(in srgb, #13C288 14%, var(--app-shell-bg-elevated));
+  --app-stat-label: #555555;
+  --app-audit-bar-bg: #F8FAFC;
+  --app-audit-bar-shadow: 0 -4px 16px rgba(15, 23, 42, 0.06);
+  --app-git-badge-bg: rgba(59, 130, 246, 0.12);
+  --app-git-badge-border: rgba(59, 130, 246, 0.28);
+  --app-git-badge-text: #1D4ED8;
+  --app-btn-action-text: #4338CA;
+  --app-building-dialog-bg: #FFFFFF;
+  /* Light pastel warn/error — dark theme keeps deep amber/red + gold text */
+  --app-status-banner-warn-bg: #FEF3C7;
+  --app-status-banner-warn-border: rgba(217, 119, 6, 0.28);
+  --app-status-banner-warn-text: #B45309;
+  --app-status-banner-error-bg: #FEE2E2;
+  --app-status-banner-error-border: rgba(220, 38, 38, 0.28);
+  --app-status-banner-error-text: #B91C1C;
+  --app-status-banner-item-text: #7F1D1D;
+  --app-status-banner-warn-item-text: #92400E;
+  --app-status-banner-chip-bg: rgba(15, 23, 42, 0.06);
+  /* Border matches banner fill so chip outline disappears into the bar */
+  --app-status-banner-chip-border: var(--app-status-banner-warn-bg);
+  --app-status-banner-error-chip-border: var(--app-status-banner-error-bg);
+  --app-version-pop-shadow: 0 16px 48px rgba(15, 23, 42, 0.14);
+
+  /* Graph nodes */
+  --app-graph-object: #4F46E5;
+  --app-graph-object-dim: #6366F1;
+  --app-graph-object-bright: #4338CA;
+  --app-graph-field: #059669;
+  --app-graph-field-lookup: #10B981;
+  --app-graph-field-dim: #047857;
+  --app-graph-layout: #D97706;
+  --app-graph-layout-dim: #B45309;
+  --app-graph-layout-bright: #F59E0B;
+  --app-graph-link: rgba(79, 70, 229, 0.4);
+  --app-graph-link-highlight: #6366F1;
+  --app-graph-particle: #818CF8;
+  --app-graph-label: #0F172A;
+  --app-graph-label-bg: rgba(255, 255, 255, 0.9);
+  --app-graph-node-dim: #CBD5E1;
+
+  color-scheme: light;
+}
+
+.dark {
+  /* Canvas & graph — original dark experience */
+  --app-canvas-bg: #000000;
+  --app-graph-bg: #000000;
+  --app-starfield-opacity: 0.65;
+  --app-starfield-size: 0.7;
+  --app-graph-label-stroke: rgba(0, 0, 0, 0.92);
+  --app-graph-hint: #9CA3AF;
+
+  --app-shell-bg: rgba(5, 5, 10, 0.97);
+  --app-shell-bg-solid: #0A0A12;
+  --app-shell-bg-elevated: rgba(5, 5, 10, 0.98);
+  --app-shell-bg-overlay: rgba(0, 0, 0, 0.55);
+  --app-shell-bg-muted: rgba(7, 7, 12, 0.99);
+  --app-shell-bg-subtle: rgba(255, 255, 255, 0.03);
+  --app-shell-bg-hover: rgba(255, 255, 255, 0.1);
+  --app-shell-bg-active: rgba(99, 102, 241, 0.14);
+  --app-shell-bg-accent: rgba(99, 102, 241, 0.08);
+  --app-shell-bg-accent-strong: rgba(99, 102, 241, 0.14);
+  --app-shell-bg-success: rgba(16, 185, 129, 0.12);
+  --app-shell-bg-info: rgba(59, 130, 246, 0.07);
+  --app-shell-bg-danger: rgba(127, 29, 29, 0.2);
+  --app-shell-bg-warning: rgba(245, 158, 11, 0.12);
+  --app-shell-bg-footer: rgba(0, 0, 0, 0.25);
+  --app-shell-bg-input: rgba(255, 255, 255, 0.05);
+  --app-shell-bg-input-subtle: rgba(255, 255, 255, 0.03);
+  --app-shell-bg-panel: rgba(8, 8, 12, 0.97);
+  --app-shell-bg-dropdown: rgba(12, 12, 18, 0.98);
+  --app-shell-bg-floating: rgba(8, 8, 14, 0.97);
+  --app-shell-bg-floating-soft: rgba(8, 8, 14, 0.38);
+  /* Mild opaque lift vs translucent track — reads clearly on dark floating chrome */
+  --app-view-toggle-selected-bg: rgba(255, 255, 255, 0.14);
+  --app-shell-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  --app-shell-shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.75);
+  --app-search-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --app-search-shadow-focus: 0 0 18px rgba(99, 102, 241, 0.22), 0 4px 20px rgba(0, 0, 0, 0.4);
+
+  --app-text-primary: #E5E7EB;
+  --app-text-secondary: #9CA3AF;
+  --app-text-muted: #6B7280;
+  --app-text-subtle: #4B5563;
+  --app-text-disabled: #374151;
+  --app-text-body: #C9D1D9;
+  --app-text-label: #9CA3AF;
+  --app-text-accent: #818CF8;
+  --app-text-accent-muted: #A5B4FC;
+  --app-text-success: #10B981;
+  --app-text-danger: #F87171;
+  --app-text-danger-soft: #FCA5A5;
+  --app-text-info: #BFDBFE;
+  --app-text-info-soft: #93C5FD;
+  --app-text-warning: #FCD34D;
+  --app-text-on-accent: #FFFFFF;
+  --app-text-inverse: #111827;
+  --app-launcher-title: #F9FAFB;
+
+  /* Outline chips (e.g. Newly created) */
+  --app-chip-outline-border: #FFFFFF;
+  --app-chip-outline-text: #FFFFFF;
+
+  /* Neutral info banner (wizard tips) */
+  --app-info-banner-bg: #000000;
+  --app-info-banner-border: #333333;
+  --app-info-banner-text: #FFFFFF;
+
+  /* Panel / card strokes — match Object info card visibility */
+  --app-border: #333333;
+  --app-border-subtle: #333333;
+  --app-border-strong: #333333;
+  --app-border-accent: rgba(99, 102, 241, 0.35);
+  --app-border-accent-strong: rgba(99, 102, 241, 0.45);
+  --app-border-success: rgba(16, 185, 129, 0.35);
+  --app-border-info: rgba(96, 165, 250, 0.22);
+  --app-border-danger: rgba(248, 113, 113, 0.25);
+  --app-border-dashed: rgba(255, 255, 255, 0.1);
+
+  --app-accent: #6366F1;
+  --app-accent-light: #818CF8;
+  --app-accent-muted: #A5B4FC;
+  --app-accent-glow: rgba(99, 102, 241, 0.45);
+  --app-accent-shadow: rgba(99, 102, 241, 0.45);
+
+  --app-toggle-off: rgba(255, 255, 255, 0.15);
+  --app-toggle-on: #6366F1;
+  --app-toggle-knob: #FFFFFF;
+  --app-scrollbar-thumb: rgba(255, 255, 255, 0.18);
+  --app-scrollbar-thumb-strong: rgba(255, 255, 255, 0.22);
+  --app-overlay-blur: rgba(0, 0, 0, 0.72);
+  --app-ctrl-btn-bg: rgba(0, 0, 0, 0.85);
+  --app-ctrl-btn-border: #333333;
+
+  --app-btn-primary-bg: #6366F1;
+  --app-btn-primary-text: #FFFFFF;
+  --app-btn-primary-hover: #818CF8;
+  --app-btn-primary-shadow: rgba(99, 102, 241, 0.4);
+
+  /* Launcher — original gradient cards */
+  --app-card-ai-bg: linear-gradient(145deg, rgba(67, 56, 202, 0.35), rgba(49, 46, 129, 0.25));
+  --app-card-ai-border: rgba(99, 102, 241, 0.3);
+  --app-card-ai-border-hover: rgba(129, 140, 248, 0.55);
+  --app-card-ai-glow: rgba(99, 102, 241, 0.28);
+  --app-card-manual-bg: linear-gradient(145deg, rgba(6, 78, 59, 0.4), rgba(4, 55, 43, 0.25));
+  --app-card-manual-border: rgba(16, 185, 129, 0.25);
+  --app-card-manual-border-hover: rgba(52, 211, 153, 0.5);
+  --app-card-manual-glow: rgba(16, 185, 129, 0.28);
+  --app-card-template-bg: linear-gradient(145deg, rgba(92, 65, 10, 0.5), rgba(66, 46, 8, 0.3));
+  --app-card-template-border: rgba(245, 158, 11, 0.25);
+  --app-card-template-border-hover: rgba(251, 191, 36, 0.5);
+  --app-card-template-glow: rgba(245, 158, 11, 0.28);
+  --app-asset-data: #22D3EE;
+  --app-asset-app: #C4B5FD;
+  --app-card-title: #F9FAFB;
+  --app-card-desc: #9CA3AF;
+  --app-card-body: #C9D1D9;
+  --app-card-icon-ai-bg: rgba(99, 102, 241, 0.25);
+  --app-card-icon-manual-bg: rgba(16, 185, 129, 0.2);
+  --app-card-icon-template-bg: rgba(245, 158, 11, 0.2);
+  --app-modal-shadow: 0 32px 80px rgba(0, 0, 0, 0.95);
+  /* Status / success popups — neutral elevation only, no accent glow */
+  --app-popup-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 24px 64px rgba(0, 0, 0, 0.72),
+    0 8px 20px rgba(0, 0, 0, 0.4);
+
+  --app-wizard-sidebar-bg: rgba(7, 7, 12, 0.97);
+  --app-wizard-floating-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  --app-deploy-card-bg: linear-gradient(165deg, color-mix(in srgb, var(--app-accent) 12%, var(--app-shell-bg-elevated)) 0%, var(--app-shell-bg-elevated) 40%);
+  --app-deploy-card-header: radial-gradient(ellipse 80% 120% at 0% 0%, color-mix(in srgb, var(--app-accent) 16%, transparent), transparent 55%);
+  /* Flat elevated surface for status/success popups — no accent wash / glow */
+  --app-ai-surface-tint: var(--app-shell-bg-elevated);
+  --app-ai-row-tint: linear-gradient(180deg, color-mix(in srgb, var(--app-accent) 8%, var(--app-shell-bg-elevated)), var(--app-shell-bg-elevated));
+  /* Deploy stat card strokes — same hues as light (parity) */
+  --app-stat-object: #6366F1;
+  --app-stat-object-soft: color-mix(in srgb, #6366F1 18%, var(--app-shell-bg-elevated));
+  --app-stat-field: #D69100;
+  --app-stat-field-soft: color-mix(in srgb, #D69100 18%, var(--app-shell-bg-elevated));
+  --app-stat-link: #BE00E4;
+  --app-stat-link-soft: color-mix(in srgb, #BE00E4 18%, var(--app-shell-bg-elevated));
+  --app-stat-validation: #13C288;
+  --app-stat-validation-soft: color-mix(in srgb, #13C288 18%, var(--app-shell-bg-elevated));
+  /* Same target gray family as light #555555, lifted for dark surfaces */
+  --app-stat-label: #9A9A9A;
+  --app-audit-bar-bg: rgba(28, 28, 38, 0.97);
+  --app-audit-bar-shadow: 0 -8px 24px rgba(0, 0, 0, 0.35);
+  --app-git-badge-bg: rgba(59, 130, 246, 0.15);
+  --app-git-badge-border: rgba(59, 130, 246, 0.35);
+  --app-git-badge-text: #93C5FD;
+  --app-btn-action-text: #C7D2FE;
+  --app-building-dialog-bg: rgba(7, 7, 12, 0.98);
+  --app-status-banner-warn-bg: rgba(120, 53, 15, 0.35);
+  --app-status-banner-warn-border: rgba(251, 191, 36, 0.25);
+  --app-status-banner-warn-text: #FCD34D;
+  --app-status-banner-error-bg: rgba(127, 29, 29, 0.35);
+  --app-status-banner-error-border: var(--app-border-danger);
+  --app-status-banner-error-text: var(--app-text-danger-soft);
+  --app-status-banner-item-text: #FECACA;
+  --app-status-banner-warn-item-text: #FDE68A;
+  --app-status-banner-chip-bg: rgba(255, 255, 255, 0.12);
+  --app-status-banner-chip-border: #333333;
+  --app-status-banner-error-chip-border: #333333;
+  --app-version-pop-shadow: 0 28px 80px rgba(0, 0, 0, 0.85), 0 0 0 1px var(--app-border-subtle);
+
+  --app-graph-object: #6366F1;
+  --app-graph-object-dim: #3B3E8A;
+  --app-graph-object-bright: #A5B4FC;
+  --app-graph-field: #10B981;
+  --app-graph-field-lookup: #34D399;
+  --app-graph-field-dim: #065F46;
+  --app-graph-layout: #F59E0B;
+  --app-graph-layout-dim: #78350F;
+  --app-graph-layout-bright: #FCD34D;
+  --app-graph-link: rgba(99, 102, 241, 0.4);
+  --app-graph-link-highlight: #818CF8;
+  --app-graph-particle: #A5B4FC;
+  --app-graph-label: #E5E7EB;
+  --app-graph-label-bg: rgba(8, 8, 12, 0.85);
+  --app-graph-node-dim: #111111;
+
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  background: var(--app-canvas-bg);
+  color: var(--app-text-primary);
+}
+
+.wiz-form-scroll,
+.obj-adv-nav-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--app-scrollbar-thumb-strong) transparent;
+}
+
+.wiz-form-scroll::-webkit-scrollbar,
+.obj-adv-nav-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.wiz-form-scroll::-webkit-scrollbar-thumb,
+.obj-adv-nav-scroll::-webkit-scrollbar-thumb {
+  background: var(--app-scrollbar-thumb);
+  border-radius: 999px;
+}
+
+.wiz-form-scroll::-webkit-scrollbar-track,
+.obj-adv-nav-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}

@@ -1,0 +1,25 @@
+---
+description: Do not alter Build with AI Agent or Build Manually flows unless explicitly asked
+alwaysApply: true
+---
+
+# Locked object-creation flows
+
+The **Build with AI Agent** and **Build Manually** object-creation workflows are complete and locked.
+
+## Do not change unless the user explicitly asks
+
+Do **not** edit, refactor, restyle, retune timing, or change behavior in these flows (or their shared success/deploy/graph-arrival paths) unless the user specifically requests a change to them.
+
+### Locked surfaces (treat as off-limits by default)
+
+- `src/app/components/create-object-ai-panel.tsx` and related AI agent helpers
+- `src/app/components/create-object-wizard.tsx` when used for the **manual** create/edit path
+- Shared deploy/arrival behavior in `App.tsx` that those two flows already rely on — only extend carefully for new flows; never regress AI/manual
+
+### Allowed without asking
+
+- New flows (e.g. **Use Template**) that **reuse** the same design system, wizard steps, build/deploy UX, and graph arrival patterns
+- Passing prefill/initial data **into** the manual wizard for templates, without changing the wizard’s core step logic for blank manual create
+
+When in doubt: leave AI Agent and Build Manually untouched and build new work beside them.
