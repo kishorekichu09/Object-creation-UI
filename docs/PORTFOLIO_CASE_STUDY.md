@@ -65,6 +65,47 @@ I did not start from “three cool modes.” I started from three real situation
 
 ---
 
+## Decision stories (tradeoffs, not milestones)
+
+These are the choices that shaped the product under real constraints.
+
+### 1. Why I prioritized AI generation and UX simplification
+**Stake:** Competitive pressure + product vision  
+
+The old Smart App Builder strength was depth; the weakness was discoverability. Competitive analysis pointed at AI-native creation as a strategic opportunity, and our org already had agent/LLM investment. I prioritized AI App Generation and UX simplification together — not as separate tracks — because generating a schema without simplifying the surrounding experience would only move the bottleneck. The Recommended path on the launcher is that product bet made visible.
+
+### 2. Why Phase 1 kept technical terminology
+**Stake:** Trust with implementers + migration risk  
+
+It was tempting to rename everything into friendly business language on day one. I didn’t. Implementers, BA partners, and developers already shared a vocabulary — Object, Field, Lookup, Build, Deploy, Portation. Softening those words before the new mental model was stable would create two dictionaries and break handoffs. Phase 1 kept platform terminology in the manual wizard and properties panels, while AI and templates spoke in goals and suites. Simplification targeted structure and progressive disclosure first; language would evolve once the new flows proved themselves.
+
+### 3. Why mandatory config was separated from advanced settings
+**Stake:** Cognitive load vs enterprise completeness  
+
+Enterprise objects need notifications, constraints, calendar, file managers, data providers, field tracking, and more — but none of that should block a valid first deploy. I split the experience: name, type, primary field, and a minimum field set are mandatory; everything else lives in an Advanced Settings widget (13 sections, grouped as Data & records / Automation / Integrations / Type-specific). Advanced settings never gate Build/Deploy. Power stays available; first value stays reachable.
+
+### 4. Why I introduced a wizard-based creation flow
+**Stake:** Long forms hide failure until the end  
+
+A single scrolling create screen made every rule feel simultaneous. I moved to a stepped wizard so each decision had a clear exit condition: identity → fields on the live graph → optional advanced → Build → Deploy review. Steps teach platform rules before they become blockers, and the same wizard became the customize surface for templates. The wizard isn’t ceremony; it’s paced validation with a shared spine across paths.
+
+### 5. Why creation moved to an organization-level layout
+**Stake:** Objects don’t exist alone  
+
+Creating an object inside an isolated form lied about the product. Objects inherit meaning from the organization graph — siblings, lookups, layouts, downstream apps. After the visualization insight (~78% task completion), I pushed creation into an organization-level spatial workspace: Explore counts, relationship legend, canvas, and detail panel. Create / Build / Deploy lands on that map with a Newly Created state.
+
+### 6. Why Shadcn/UI instead of continuing with Bootstrap
+**Stake:** Component quality for a denser product  
+
+Bootstrap had carried older SAB surfaces, but the new object workspace needed denser patterns — dialogs, drawers, tabs, selects, tooltips, accessible primitives — with a design-system feel we could theme for light/dark and graph chrome. Shadcn/UI (Radix primitives + Tailwind) let me compose those patterns without fighting Bootstrap’s opinionated layout model: faster high-fidelity prototyping of agent panels and wizards, consistent affordances, and token-driven UI without Bootstrap override debt.
+
+### 7. How I handled feasibility and stakeholder constraints
+**Stake:** Time, dual product pressure, trust in AI  
+
+Management needed the age-old manual workflow adapted in parallel while AI was still earning trust. I sequenced work accordingly: learn and simplify manual first, design agentic with plan-before-create gates, then add templates for implementation speed. Feasibility meant respecting existing rules (≥2 fields, primary field, build/deploy) instead of inventing a greenfield object model. Stakeholder constraint became a design input: three first-class paths, one shared deploy ritual, progressive disclosure instead of a rewrite that would never ship.
+
+---
+
 ## Flow 1 — Build Manually
 
 I started here to feel every friction point the agent would later handle.
